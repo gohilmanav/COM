@@ -1,6 +1,7 @@
 import 'package:exam2/Units/App_colors.dart';
 import 'package:exam2/main.dart';
 import 'package:exam2/ui/Loginpage/Loginpage.dart';
+import 'package:exam2/ui/Otppage/OtpPage.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPage extends StatefulWidget {
@@ -202,14 +203,14 @@ class _ForgotPageState extends State<ForgotPage> {
                 if (formKey.currentState?.validate() ?? false)
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ForgotPage()),
+                    MaterialPageRoute(builder: (context) => OtpPage()),
                   ).then((value) {
                     formKey.currentState?.reset();
                     print(
                       "Success",
                     );
                     email.clear();
-                    phone.clear();
+
                   });
               },
               style: ElevatedButton.styleFrom(
@@ -222,12 +223,12 @@ class _ForgotPageState extends State<ForgotPage> {
           ),
 
           GestureDetector(
-            onTap: () {},
             child: Center(
                 child: Padding(
               padding: const EdgeInsets.only(top: 235),
               child: GestureDetector(
                 onTap: () {
+                 
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginPage()));
                 },

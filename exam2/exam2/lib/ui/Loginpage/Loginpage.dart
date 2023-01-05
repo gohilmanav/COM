@@ -1,6 +1,7 @@
 import 'package:exam2/Units/App_colors.dart';
 import 'package:exam2/main.dart';
 import 'package:exam2/ui/Forgotpage/Forgorpage.dart';
+import 'package:exam2/ui/Homepage/Homepage.dart';
 import 'package:exam2/ui/RegisterPage/RegisterPage.dart';
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -139,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (formKey.currentState?.validate() ?? false)
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
+                          MaterialPageRoute(builder: (context) => HomePage()),
                         ).then((value) {
                           formKey.currentState?.reset();
                           print(
@@ -189,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MyApp()),
+                        MaterialPageRoute(builder: (context) => const HomePage()),
                       );
                     },
                     child: Text(
@@ -276,12 +277,13 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 12,
                 ),
-                GestureDetector(onTap: () {
-                  Navigator.push(
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => RagisterPage()),
                     );
-                },
+                  },
                   child: RichText(
                       text: TextSpan(
                           text: "Don't have an account? ",
