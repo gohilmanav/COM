@@ -33,7 +33,7 @@ class CartWight extends StatelessWidget {
         width: 270.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color:  AppTheme.themeData(context).backgroundColor,
+          color: AppTheme.themeData(context).backgroundColor,
         ),
         child: Row(
           children: [
@@ -88,7 +88,7 @@ class CartWight extends StatelessWidget {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20,top: 10),
+                  padding: const EdgeInsets.only(left: 20, top: 10),
                   child: Text(
                     "${cart.Name}",
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -159,29 +159,37 @@ class CartWight extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(1),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: AppTheme.themeData(context).backgroundColor,),
+                      borderRadius: BorderRadius.circular(5),
+                      color: AppTheme.themeData(context).backgroundColor,
+                    ),
                     child: Row(
                       children: [
                         InkWell(
-                            onTap: () {},
-                            child: Image(
-                                image: AssetImage("assets/Vector (8).png")),),
-                                SizedBox(width: 3,),
+                          onTap: () {},
+                          child:
+                              Image(image: AssetImage("assets/Vector (8).png")),
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: 3),
                           padding:
                               EdgeInsets.symmetric(horizontal: 3, vertical: 2),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(3),
-                              color:  AppTheme.themeData(context).backgroundColor,),
-                              
+                            borderRadius: BorderRadius.circular(3),
+                            color: AppTheme.themeData(context).backgroundColor,
+                          ),
                           child: Text(
                             "1",
-                            style: TextStyle(color:  AppTheme.themeData(context).cardColor, fontSize: 16),
+                            style: TextStyle(
+                                color: AppTheme.themeData(context).cardColor,
+                                fontSize: 16),
                           ),
                         ),
-                        SizedBox(width: 3,),
+                        SizedBox(
+                          width: 3,
+                        ),
                         InkWell(
                             onTap: () {},
                             child: Image(
