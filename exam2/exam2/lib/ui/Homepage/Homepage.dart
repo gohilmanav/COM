@@ -501,7 +501,7 @@ class _HomePageState extends State<HomePage> {
                         GestureDetector(
                           onTap: () {},
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 150),
+                            padding: const EdgeInsets.only(left: 155),
                             child: Text(
                               'View all',
                               style: TextStyle(

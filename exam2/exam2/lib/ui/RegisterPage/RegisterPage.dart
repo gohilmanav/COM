@@ -24,7 +24,7 @@ class _RagisterPageState extends State<RagisterPage> {
   
   
   bool _obsecureTextpassword = true;
-  bool _obsecureTextcpassword = false;
+  bool _obsecureTextcpassword = true;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
