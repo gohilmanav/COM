@@ -394,7 +394,7 @@ class _RagisterPageState extends State<RagisterPage> {
                         if (value!.isEmpty) 
                           return "  Enter Password Again";
 
-                          if(value!=pass)
+                          if(value!=pass.text)
                           return" password Not match";
                         
                         
