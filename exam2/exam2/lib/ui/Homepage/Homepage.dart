@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:exam2/Models/MainCatagory_model.dart';
 import 'package:exam2/Models/MyFavourite_model.dart';
 import 'package:exam2/Models/SpacialCombo_model.dart';
 import 'package:exam2/Models/TopPick_model.dart';
 import 'package:exam2/Units/App_colors.dart';
+import 'package:exam2/Widgets/MainCatagory_widget.dart';
 import 'package:exam2/Widgets/MyFavourite_Widgets.dart';
 import 'package:exam2/Widgets/SpacialCombo_Widget.dart';
 import 'package:exam2/Widgets/TopPick_widget.dart';
@@ -12,7 +14,6 @@ import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:marquee/marquee.dart';
-import 'package:sticky_float_button/sticky_float_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,12 +24,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<String> imgList = [
-    //'https://cdn.pixabay.com/photo/2017/06/07/10/53/pizza-2380025_960_720.jpg',
-    'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg',
-    'https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg',
-    // 'https://cdn.pixabay.com/photo/2017/01/22/19/12/pizza-2000595_960_720.jpg',
-    // 'https://cdn.pixabay.com/photo/2021/09/02/13/36/pizza-6593504_960_720.jpg',
-    // 'https://cdn.pixabay.com/photo/2015/04/03/13/29/pizza-705061_960_720.jpg'
+    "assets/thumsub.png",
+    "assets/sosyo.jpg"
+    // //'https://cdn.pixabay.com/photo/2017/06/07/10/53/pizza-2380025_960_720.jpg',
+    // 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg',
+    // 'https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg',
+    // // 'https://cdn.pixabay.com/photo/2017/01/22/19/12/pizza-2000595_960_720.jpg',
+    // // 'https://cdn.pixabay.com/photo/2021/09/02/13/36/pizza-6593504_960_720.jpg',
+    // // 'https://cdn.pixabay.com/photo/2015/04/03/13/29/pizza-705061_960_720.jpg'
   ];
   List<SpacialsCombosModel> SpacialComboList = [
     SpacialsCombosModel(
@@ -70,37 +73,37 @@ class _HomePageState extends State<HomePage> {
   List<MyFavouriteModel> MyFavouriteList = [
     MyFavouriteModel(
         id: "1",
-        imageUrl: "assets/red.png",
+        imageUrl: "assets/Rectangle 10.png",
         description: "Spacial Pizza's",
         price: "15455.00"),
     MyFavouriteModel(
         id: "2",
-        imageUrl: "assets/red.png",
+        imageUrl: "assets/Rectangle 10.png",
         description: "Spacial Pizza's",
         price: "1515.00"),
     MyFavouriteModel(
         id: "3",
-        imageUrl: "assets/red.png",
+        imageUrl: "assets/Rectangle 10.png",
         description: "Spacial Pizza's",
         price: "1105.00"),
     MyFavouriteModel(
         id: "4",
-        imageUrl: "assets/red.png",
+        imageUrl: "assets/Rectangle 10.png",
         description: "Spacial Pizza's",
         price: "105.00"),
     MyFavouriteModel(
         id: "3",
-        imageUrl: "assets/red.png",
+        imageUrl: "assets/Rectangle 10.png",
         description: "Spacial Pizza's",
         price: "1105.00"),
     MyFavouriteModel(
         id: "4",
-        imageUrl: "assets/red.png",
+        imageUrl: "assets/Rectangle 10.png",
         description: "Spacial Pizza's",
         price: "105.00"),
     MyFavouriteModel(
         id: "3",
-        imageUrl: "assets/red.png",
+        imageUrl: "assets/Rectangle 10.png",
         description: "Spacial Pizza's",
         price: "1105.00"),
   ];
@@ -141,6 +144,43 @@ class _HomePageState extends State<HomePage> {
         description: "toppicks pizza's",
         price: "100"),
   ];
+  List<MainCatagoryModel> MainCatagoryList = [
+    MainCatagoryModel(
+        id: "1",
+        imageUrl: "assets/large-orange-square_1f7e7.png",
+        description: "toppicks pizza's",
+        price: "100"),
+    MainCatagoryModel(
+        id: "1",
+        imageUrl: "assets/large-orange-square_1f7e7.png",
+        description: "Main Catagory",
+        price: "100"),
+    MainCatagoryModel(
+        id: "1",
+        imageUrl: "assets/large-orange-square_1f7e7.png",
+        description: "Main Catagory",
+        price: "100"),
+    MainCatagoryModel(
+        id: "1",
+        imageUrl: "assets/large-orange-square_1f7e7.png",
+        description: "Main Catagory",
+        price: "100"),
+    MainCatagoryModel(
+        id: "1",
+        imageUrl: "assets/large-orange-square_1f7e7.png",
+        description: "Main Catagory",
+        price: "100"),
+    MainCatagoryModel(
+        id: "1",
+        imageUrl: "assets/large-orange-square_1f7e7.png",
+        description: "Main Catagory",
+        price: "100"),
+    MainCatagoryModel(
+        id: "1",
+        imageUrl: "assets/large-orange-square_1f7e7.png",
+        description: "Main Catagory",
+        price: "100"),
+  ];
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -171,7 +211,8 @@ class _HomePageState extends State<HomePage> {
                           _key.currentState?.openDrawer();
                         },
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 5.0),
+                          padding: const EdgeInsets.only(left: 5.0,
+                          bottom: 4),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(15),
                             child: Image.asset(
@@ -281,9 +322,10 @@ class _HomePageState extends State<HomePage> {
                     child: CarouselSlider.builder(
                       itemCount: imgList.length,
                       options: CarouselOptions(
-                        height: 220,
+                        height: 250,
+                        
                         aspectRatio: 16 / 9,
-                        viewportFraction: 0.8,
+                        viewportFraction: 0.7,
                         initialPage: 0,
                         enableInfiniteScroll: true,
                         reverse: false,
@@ -303,8 +345,8 @@ class _HomePageState extends State<HomePage> {
                               ClipRRect(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(25.0)),
-                                  child: Image.network(imgList[index],
-                                      fit: BoxFit.fill, width: 1000)),
+                                  child: Image.asset(imgList[index],
+                                      fit: BoxFit.fill, width: 1100)),
                             ]));
                       },
                     ),
@@ -317,7 +359,7 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.symmetric(horizontal: 3),
                         child: Container(
                           width: 13,
-                          height: 13,
+                          height: 15,
                           margin: EdgeInsets.symmetric(
                               vertical: 0, horizontal: 2.0),
                           decoration: BoxDecoration(
@@ -352,7 +394,7 @@ class _HomePageState extends State<HomePage> {
                       GestureDetector(
                         onTap: () {},
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 85),
+                          padding: const EdgeInsets.only(left: 72),
                           child: Text(
                             'View all',
                             style: TextStyle(
@@ -378,7 +420,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       separatorBuilder: (BuildContext context, int index) {
                         return SizedBox(
-                          width: 10,
+                          width: 8,
                         );
                       },
                     ),
@@ -404,7 +446,7 @@ class _HomePageState extends State<HomePage> {
                       GestureDetector(
                         onTap: () {},
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 125),
+                          padding: const EdgeInsets.only(left: 115),
                           child: Text(
                             'View all',
                             style: TextStyle(
@@ -424,7 +466,7 @@ class _HomePageState extends State<HomePage> {
                       // physics: AlwaysScrollableScrollPhysics(
                       // ),
                       scrollDirection: Axis.horizontal,
-                      itemCount: SpacialComboList.length,
+                      itemCount: MyFavouriteList.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
                             child:
@@ -432,7 +474,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       separatorBuilder: (BuildContext context, int index) {
                         return SizedBox(
-                          width: 10,
+                          width: 8,
                         );
                       },
                     ),
@@ -459,7 +501,62 @@ class _HomePageState extends State<HomePage> {
                         GestureDetector(
                           onTap: () {},
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 160),
+                            padding: const EdgeInsets.only(left: 150),
+                            child: Text(
+                              'View all',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.deepOrangeAccent,
+                                  decoration: TextDecoration.underline),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                   Container(
+                    height: 170,
+                    width: 320,
+                    child: ListView.separated(
+                      // physics: AlwaysScrollableScrollPhysics(
+                      // ),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: top_picks_list.length,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                            child:
+                                TopPicksWight(top :top_picks_list[index]));
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return SizedBox(
+                          width: 8,
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 25, bottom: 7, top: 7),
+                          child: Container(
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Main Catagory",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 115),
                             child: Text(
                               'View all',
                               style: TextStyle(
@@ -479,15 +576,15 @@ class _HomePageState extends State<HomePage> {
                       // physics: AlwaysScrollableScrollPhysics(
                       // ),
                       scrollDirection: Axis.horizontal,
-                      itemCount: SpacialComboList.length,
+                      itemCount: MainCatagoryList.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
                             onTap: () {},
-                            child: TopPicksWight(top: top_picks_list[index]));
+                            child: MainCatagoryWidget(main: MainCatagoryList[index]));
                       },
                       separatorBuilder: (BuildContext context, int index) {
                         return SizedBox(
-                          width: 10,
+                          width: 8,
                         );
                       },
                     ),
@@ -968,59 +1065,63 @@ class _HomePageState extends State<HomePage> {
                               height: 15,
                             ),
                             Center(
-                              child: TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => LoginPage(),
-                                          ));
+                              child: Container(
+                                child: TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
                                     },
-                                    child: Container(
-                                      height: 40,
-                                      width: 120,
-                                      decoration: BoxDecoration(
-                                        color: AppColor.TheamColor,
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          "Log Out",
-                                          style: TextStyle(
-                                            color: AppColor.WhiteColor,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => LoginPage(),
+                                            ));
+                                      },
+                                      child: Container(
+                                        height: 40,
+                                        width: 120,
+                                        decoration: BoxDecoration(
+                                          color: AppColor.TheamColor,
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "Log Out",
+                                            style: TextStyle(
+                                              color: AppColor.WhiteColor,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  )),
+                                    )),
+                              ),
                             ),
                           ],
                         );
                       });
                 },
-                child: StickyFloatButton(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: AppColor.TheamColor,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Log out",
-                        style: TextStyle(
-                            color: AppColor.WhiteColor,
-                            fontWeight: FontWeight.bold,fontSize: 16),
-                      ),
+                child: Container( height: 60,width: 250,
+                  decoration: BoxDecoration(
+                      color: AppColor.TheamColor,
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Log out",
+                      style: TextStyle(
+                          color: AppColor.WhiteColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
                     ),
                   ),
                 ),
               ),
             ),
-          ])))),
+            SizedBox(height: 20,)
+          ])
+          ))),
     );
   }
 }

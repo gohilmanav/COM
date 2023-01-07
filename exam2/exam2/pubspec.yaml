@@ -39,7 +39,7 @@ dependencies:
   marquee: ^2.1.0
   carousel_slider: ^4.1.1
   carousel_indicator: ^1.0.6
-  sticky_float_button: ^0.0.2
+ 
  
   pin_code_fields: ^7.4.0
 dev_dependencies:

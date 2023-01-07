@@ -10,8 +10,8 @@ class SpacialsCombosWight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 160,
+      height: 160,
+      width: 150,
       decoration: BoxDecoration(
         //color: Colors.black,
         borderRadius: BorderRadius.circular(7),
@@ -21,8 +21,8 @@ class SpacialsCombosWight extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Container(
-              width: 160,
-              height: 160,
+              width: 200,
+              height: 140,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
@@ -31,18 +31,18 @@ class SpacialsCombosWight extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 105, left: 5),
+            padding: const EdgeInsets.only(top: 90, left: 5),
             child: Column(
               children: [
                 Container(
-                  height: 55,
-                  width: 150,
+                  height: 50,
+                  width: 139.7,
                   decoration: BoxDecoration(
                       color: Colors.black54,
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 5),
                   alignment: Alignment.center,
                   child: Column(
                     children: [
@@ -70,7 +70,7 @@ class SpacialsCombosWight extends StatelessWidget {
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              "${spacial.price}",
+                              " \$ ${spacial.price}",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 15,

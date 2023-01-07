@@ -21,8 +21,10 @@ class _RagisterPageState extends State<RagisterPage> {
   final Cpass = TextEditingController();
   final email = TextEditingController();
   final refer = TextEditingController();
+  
+  
   bool _obsecureTextpassword = true;
-  bool _obsecureTextcpassword = true;
+  bool _obsecureTextcpassword = false;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -276,6 +278,7 @@ class _RagisterPageState extends State<RagisterPage> {
                         hintText: 'Phone Number',
                       ),
                       keyboardType: TextInputType.number,
+                     
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "  Enter Phone Number";
@@ -348,7 +351,7 @@ class _RagisterPageState extends State<RagisterPage> {
                     padding: const EdgeInsets.only(right: 22, left: 22),
                     child: TextFormField(
                       controller: Cpass,
-                      onTap: _toggleObscuredcpassword,
+                     
                       decoration: InputDecoration(
                           filled: true,
                           fillColor: Color(0xfff2f3f7),
@@ -388,9 +391,13 @@ class _RagisterPageState extends State<RagisterPage> {
                           ),
                           hintText: 'Confirm Password'),
                       validator: (value) {
-                        if (value!.isEmpty) {
+                        if (value!.isEmpty) 
                           return "  Enter Password Again";
-                        }
+
+                          if(value!=pass)
+                          return" password Not match";
+                        
+                        
                         return null;
                       },
                     ),
