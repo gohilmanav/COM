@@ -1,4 +1,4 @@
-import 'package:crud/Ui/Firstpage/Firstpage.dart';
+import 'package:crud/Ui/Addpage/AddPage.dart';
 
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: Firstpage(),
+      home:AddPage (),
       debugShowCheckedModeBanner: false,
     );
   }

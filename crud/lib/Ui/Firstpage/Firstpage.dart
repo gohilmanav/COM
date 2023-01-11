@@ -1,5 +1,11 @@
+import 'dart:convert';
+import 'dart:ffi';
+
+import 'package:crud/Models/CardModel.dart';
+import 'package:crud/SharedPreferences/SharedPreferences.dart';
 import 'package:crud/Ui/Addpage/AddPage.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Firstpage extends StatefulWidget {
   const Firstpage({
@@ -18,12 +24,44 @@ class Firstpage extends StatefulWidget {
 // }
 
 class _FirstpageState extends State<Firstpage> {
+    late SharedPreferences sharedPreferences;
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController numberController = new TextEditingController();
+  TextEditingController ageController = new TextEditingController();
+
+  
+  String? stordata;
+
+
+  // void stordata() {
+  //   User user =
+  //       User(nameController.text, ageController.text, numberController.text);
+  //   String userdata = jsonEncode(user);
+  //   print(userdata);
+
+  //   //dynamic SharedPreferences prefs setString.('userdata' userdata);
+  // }
+
+  @override
+  void initState() {
+     getdata();
+    super.initState();
+  }
+
+  // @override
+  // Void  initState() {
+  //   super.initState();
+  //   getdata();
+  
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(238, 241, 242, 1),
       appBar: AppBar(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         title: Text(
           "Card List",
           style: TextStyle(color: Colors.black),
@@ -37,11 +75,11 @@ class _FirstpageState extends State<Firstpage> {
             size: 20,
           ),
           onPressed: () {
-           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => AddPage(),
-                                ));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AddPage(),
+                ));
           },
         ),
         actions: <Widget>[
@@ -50,9 +88,7 @@ class _FirstpageState extends State<Firstpage> {
               Icons.delete,
               color: Colors.black45,
             ),
-            onPressed: () {
-             
-            },
+            onPressed: () {},
           )
         ],
       ),
@@ -62,14 +98,25 @@ class _FirstpageState extends State<Firstpage> {
           child: Transform.translate(
             offset: Offset.fromDirection(0, 15),
             child: Container(
-              height: 210,
+              child: stordata == null ? Text("no data ") : Text(stordata!),
+
               // child: CardView(widget.card),
             ),
           ),
         ),
       ),
     );
-    // Scaffold(
+  }
+
+  void getdata() async {
+    User getdata= User(nameController.text, ageController.text, numberController.text);
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    stordata = pref.getString("storedata");
+  }
+}
+
+
+ // Scaffold(
     //   backgroundColor: AppColor.pholder_background,
     //   body: SafeArea(
     //     child: Card(
@@ -199,7 +246,3 @@ class _FirstpageState extends State<Firstpage> {
     //     ),
     //   ),
     // );
-  }
-}
-
-class CardProvider {}

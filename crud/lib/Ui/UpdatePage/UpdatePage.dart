@@ -16,8 +16,17 @@ class _UpdatePageState extends State<UpdatePage> {
         body: SingleChildScrollView(
       child: SafeArea(
           child: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.indigo, Colors.black])),
+         decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/download (1).jpeg"), fit: BoxFit.fill)
+            // color:Colors.green
+            //     gradient: LinearGradient(colors: [
+            //   Colors.black,
+            //   Colors.blue.shade900,
+            //   Colors.grey.shade900,
+            // ]
+            // )
+            ),
         height: MediaQuery.of(context).size.height,
         width: 500,
         child: Column(
