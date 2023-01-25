@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:posts/Model/Post_Model.dart';
 import 'package:posts/bloc/posts_bloc/Posts_Stats.dart';
 import 'package:posts/bloc/posts_bloc/Posts_bloc.dart';
 import 'package:posts/widget/post_widget.dart';

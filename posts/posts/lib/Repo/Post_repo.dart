@@ -7,17 +7,17 @@ import 'dart:convert';
 
 
 abstract class PostRepo {
-  Future<List<Postmodel>> getPosts();
+  Future<List<PostsModel>> getPosts();
 }
 
 class PostRepoImpl implements PostRepo {
   @override
-  Future<List<Postmodel>> getPosts() async {
+  Future<List<PostsModel>> getPosts() async {
     http.Response respons = await http.get(Uri.parse(AppAPI.Posturl));
     if (respons.statusCode == 200) {
       var data = json.decode(respons.body);
-      List<Postmodel> views =
-          (await Postmodel.fromJson(data)) as List<Postmodel>;
+      List<PostsModel> views =
+          (await PostsModel.fromJson(data)) as List<PostsModel>;
       return views;
     } else {
       throw Exception();

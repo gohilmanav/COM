@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:posts/Repo/Post_repo.dart';
 import 'package:posts/Ui/Homepage/HomePage.dart';
-import 'package:posts/Ui/Splashscreen/Splashscreen.dart';
 import 'package:posts/bloc/posts_bloc/Posts_bloc.dart';
 
 void main() {

@@ -6,7 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:posts/Model/Post_Model.dart';
 
 class Postwidget extends StatefulWidget {
-  Postmodel postModel1;
+  PostsModel postModel1;
   Postwidget({Key? key, required this.postModel1}) : super(key: key);
 
   @override
@@ -23,16 +23,16 @@ class _PostwidgetState extends State<Postwidget> {
           Container(
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    " ${widget.postModel1.it}",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
+                // Align(
+                //   alignment: Alignment.topRight,
+                //   child: Text(
+                //     " ${widget.postModel1.it}",
+                //     style: TextStyle(
+                //         color: Colors.white,
+                //         fontSize: 15,
+                //         fontWeight: FontWeight.bold),
+                //   ),
+                // ),
                 SizedBox(
                   height: 5,
                 ),

@@ -16,7 +16,7 @@ class postsbloc extends Bloc<Postevent, PostStats>
   _onFetchPostEvent(FetchPostevent event, Emitter<PostStats> emit) async {
     try {
       emit(PostLoadingState());
-      List<Postmodel> massage = await repo.getPosts();
+      List<PostsModel> massage = await repo.getPosts();
       if (massage.isEmpty) {
         emit(NoPostStates());
       } else {
