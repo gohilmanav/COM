@@ -14,14 +14,13 @@ class CommentsWidget extends StatefulWidget {
 class _CommentsWidgetState extends State<CommentsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-            child: Column(
+    return Container(
+          child: Column(
       children: [
         Text(
           "${widget.comment.name}",
           style: TextStyle(
-              color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+            color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 5,
@@ -29,7 +28,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
         Text(
           "${widget.comment.email}",
           style: TextStyle(
-              color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+            color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 5,
@@ -37,12 +36,13 @@ class _CommentsWidgetState extends State<CommentsWidget> {
         Text(
           "${widget.comment.body}",
           style: TextStyle(
-              color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+            color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 5,
         )
       ],
-    )));
+    ),
+        );
   }
 }

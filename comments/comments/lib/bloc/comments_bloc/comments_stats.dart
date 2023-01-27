@@ -19,7 +19,7 @@ class CommentsLoadingState extends CommentsStats{
   List<Object?> get props => throw UnimplementedError();
 }
 class CommentsLoadedState extends CommentsStats{
-  List <commentmodel>massage;
+  List <commentmodel> massage;
   CommentsLoadedState({required this.massage});
   List<Object?>get props=>[this.massage];
 }

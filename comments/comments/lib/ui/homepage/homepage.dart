@@ -40,7 +40,7 @@ class _homepageState extends State<homepage> {
                       backgroundColor: Colors.black,
                       color: Colors.white,
                     );
-                  else if (state is CommentsLoadedState) {
+                 if (state is CommentsLoadedState) {
                     return Padding(
                       padding: EdgeInsets.all(20),
                       child: ListView.separated(
@@ -55,11 +55,12 @@ class _homepageState extends State<homepage> {
                             );
                           }),
                     );
-                  } else if (state is NoCommentsStates ||
+                  } 
+                   if (state is NoCommentsStates ||
                       state is CommentsErrorState) {
                     return Text(state.toString());
                   }
-                  else return Container();
+                   return Container();
                 },
               ))),
     );
