@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "733105232499",
+    "project_id": "aurthologin",
+    "storage_bucket": "aurthologin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733105232499:android:80174fe3942d38e5192806",
+        "android_client_info": {
+          "package_name": "com.example.aurtho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733105232499-9saidp64bnq1q9hj05t0bpio03kouce4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvliHHdwrGDLWXpghz7LhRORi0DwHuq60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733105232499-9saidp64bnq1q9hj05t0bpio03kouce4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

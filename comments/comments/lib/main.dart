@@ -1,5 +1,8 @@
-import 'package:comments/ui/homepage.dart';
+import 'package:comments/bloc/comments_bloc/comments_bloc.dart';
+import 'package:comments/repo/comments_repo.dart';
+import 'package:comments/ui/homepage/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: homepage(),
+      home: MultiBlocProvider(providers: [
+        BlocProvider(
+            create: (BuildContext context) =>
+                Commentsbloc(repo: CommentsRepoImpl()))
+      ], child: homepage()),
       debugShowCheckedModeBanner: false,
     );
   }

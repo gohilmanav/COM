@@ -44,13 +44,13 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.center,
             child: BlocBuilder<postsbloc, PostStats>(
               builder: (context, state) {
-                if (state is PostInitialState || state is PostLoadingState) {
+                if (state is PostInitialState || state is PostLoadingState) 
                   return CircularProgressIndicator(
                     backgroundColor: Colors.black,
                     color: Colors.white,
                   );
-                }
-                if (state is PostLoadedState) {
+                
+               else if (state is PostLoadedState) {
                   return Padding(
                     padding: const EdgeInsets.all(20),
                     child: Expanded(
@@ -67,10 +67,10 @@ class _HomePageState extends State<HomePage> {
                     )),
                   );
                 }
-                if (state is NoPostStates || state is PostErrorState) {
+               else if (state is NoPostStates || state is PostErrorState) {
                   return Text(state.toString());
                 }
-                return SizedBox();
+               else return Container();
               },
             ),
           ),
